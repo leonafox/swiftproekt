@@ -1,0 +1,277 @@
+//variables
+@colour1: #353f47;
+@colour2: #ffffff;
+@colour3: #4bcaff;
+@colour4: #515f67;
+
+
+//fonts
+@font-face {
+    font-family: 'Segoe UI';
+    src: url('../fonts/segoeui.eot');
+    src: url('../fonts/segoeui.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/segoeui.woff') format('woff'),
+    url('../fonts/segoeui.svg#SegoeUI') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Segoe UI';
+    src: url('../fonts/segoeuib.eot');
+    src: url('../fonts/segoeuib.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/segoeuib.woff') format('woff'),
+    url('../fonts/segoeuib.svg#SegoeUI') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Segoe UI';
+    src: url('../fonts/segoeuil.eot');
+    src: url('../fonts/segoeuil.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/segoeuil.woff') format('woff'),
+    url('../fonts/segoeuil.svg#SegoeUI') format('svg');
+    font-weight: lighter;
+    font-style: normal;
+}
+
+
+//resets
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+
+    li {
+        display: inline-block;
+    }
+}
+
+//general
+body {
+    font-family: 'Segoe UI', Tahoma, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+section {
+    width: 100%;
+    float: left;
+}
+
+//headers
+h1,
+h2 {
+    font-size: 30px;
+    font-weight: lighter;
+    color: @colour1;
+    text-transform: uppercase;
+    &:after {
+        content: "";
+        display: block;
+        height: 2px;
+        width: 45px;
+        background-color: @colour1;
+    }
+}
+
+h2 {
+    margin-bottom: 40px;
+    color: @colour2;
+    &:after {
+        background-color: @colour2;
+    }
+}
+
+
+.navigation {
+    float: right;
+    position: relative;
+    a {
+        padding: 10px;
+        margin-left: 30px;
+        border: 2px solid transparent;
+        color: @colour2;
+        text-transform: uppercase;
+        font-weight: bold;
+        &:hover,
+        &.active {
+            color: @colour3;
+            border-color: @colour3;
+        }
+    }
+}
+
+//wrapper
+.wrapper {
+    width: 1170px;
+    margin: 0px auto;
+}
+
+//header
+header {
+    width: 100%;
+    height: 150px;
+    background-color: fade(@colour1, 85%);
+    position: absolute;
+    z-index: 10;
+
+    nav {
+        width: 1170px;
+        margin: 0px auto;
+
+
+
+        img {
+            position: relative;
+            float: left;
+            top: 65px;
+        }
+
+        ul {
+            top: 58px;
+        }
+    }
+}
+
+//slider
+.slider {
+    width: 100%;
+    .slider-item {
+        width: 100%;
+        height: 400px;
+        padding-top: 400px;
+        background-position: top center;
+        text-align: center;
+        p {
+            text-transform: uppercase;
+            font-size: 42px;
+            font-weight: lighter;
+            padding: 20px 10px;
+            background-color: fade(@colour1, 85%);
+            display: inline-block;
+            margin-bottom: 12px;
+            color: @colour2
+        }
+    }
+}
+
+//portfolio
+.portfolio {
+    padding: 80px 0;
+    nav {
+        position: relative;
+        top: -20px;
+        a {
+            color: @colour1;
+        }
+    }
+}
+
+.gallery {
+    float: left;
+    margin-top: 60px;
+    a {
+        position: relative; 
+        overflow: hidden;
+        display: inline-block;
+        float: left;
+        margin: 0 30px 30px 0;
+        &:nth-child(4n+0) {
+            margin-right: 0;
+        }
+        &:hover:after {
+        content: "+";
+        display: block;
+        color: @colour2;
+        width: 270px;
+        height: 270px;
+        position: absolute;
+        background-color: fade(@colour1, 85%);
+        text-align: center;
+        font-size: 72px;
+        line-height: 270px;
+        z-index: 10;
+        left: 0;
+        top: 0;
+        }
+    }
+}
+
+//twitter
+.twitter {
+    background-color: @colour3;
+    padding: 70px 0;
+    color: @colour2;
+    .wrapper {
+        background: transparent url(../images/twitter.png) top right no-repeat;
+    }
+    p {
+        font-size: 28px;
+        font-weight: lighter;
+        line-height: 50px;
+    }
+}
+
+//about
+.about {
+    background: @colour1 url(../images/bgr-about.png) top center;
+    height: 500px;
+    padding-top: 100px;
+    box-sizing: border-box;
+    color: @colour2;
+    .about-col {
+        width: 50%;
+        float: left;
+        box-sizing: border-box;
+        padding-right: 30px;
+    }
+    p {
+        line-height: 24px;
+        margin-bottom: 25px;
+    }
+    ul a {
+        border: 2px solid @colour2;
+        display: block;
+        margin-right: 20px;
+    }
+}
+
+//footer
+footer {
+    width: 100%;
+    float: left;
+    background-color: @colour1;
+    height: 165px;
+    color: @colour4;
+    p {
+        float: right;
+        position: relative;
+        top: 75px;
+    }
+    ul {
+        position: relative;
+        top: 75px;
+        li {
+            padding: 0 10px;
+            border-left: 1px solid @colour4;
+            a {
+                color: @colour4;
+                text-transform: uppercase;
+            }
+            &:first-child {
+                border-left: 0;
+                padding-left: 0;
+            }
+        }
+    }
+}
